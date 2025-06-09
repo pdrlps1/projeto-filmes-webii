@@ -21,9 +21,10 @@ class MovieRequest extends FormRequest
      */
     public function rules(): array
     {
+        $maxYear = (int) date('Y') + 1;
         return [
             'title' => 'required | string | max:255',
-            'year' => 'required | integer | min: 1888 | max:' . date(('Y') + 1),
+            'year' => 'required | integer | min: 1888 | max: 9999',
             'rating' => 'nullable | numeric | min: 0 | max: 10',
             'review' => 'nullable | string',
             'watched' => 'required | boolean',

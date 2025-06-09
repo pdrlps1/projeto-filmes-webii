@@ -1,10 +1,13 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MovieController;
 
 Route::get('/', function () {
-    return redirect()->route('movies.index');
+    return view('welcome');
 });
 
-// Rotas RESTful para Movie
 Route::resource('movies', MovieController::class);
+
+Route::get('movies/{movie}/toggle-watched', [MovieController::class, 'toggleWatched'])
+    ->name('movies.toggleWatched');
