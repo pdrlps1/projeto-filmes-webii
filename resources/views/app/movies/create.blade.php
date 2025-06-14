@@ -52,7 +52,7 @@
             @enderror
         </div>
 
-        <button type="submit" class="bg-green-600 text-white px-4 py-2 rounded">
+        <button type="submit" class="bg-green-600 text-white px-4 py-2 rounded cursor-pointer">
             Salvar Filme
         </button>
         <a href="{{ route('movies.index') }}" class="ml-4 text-gray-600 hover:underline">Cancelar</a>
